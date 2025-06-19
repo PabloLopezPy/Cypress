@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Completado</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="confirmation-page">
+        <div class="confirmation-container">
+            <div class="success-animation">
+                <div class="checkmark-circle">
+                    <div class="checkmark"></div>
+                </div>
+            </div>
+            
+            <div class="welcome-header">
+                <h1>¡Bienvenido a la comunidad!</h1>
+                <p class="user-name" id="userName"></p>
+                <p class="success-message">Tu cuenta ha sido creada exitosamente</p>
+            </div>
+            
+            <div class="info-card">
+                <h2><i class="fas fa-user-check"></i> Datos de registro</h2>
+                
+                <div class="user-info">
+                    <div class="info-row">
+                        <div class="info-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Nombre</span>
+                            <span class="info-value" id="displayNombre"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Correo electrónico</span>
+                            <span class="info-value" id="displayEmail"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="info-row">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Fecha de nacimiento</span>
+                            <span class="info-value" id="displayFechaNacimiento">No proporcionada</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="next-steps">
+                    <h3><i class="fas fa-clipboard-list"></i> Próximos pasos</h3>
+                    <ul>
+                        <li>Verificar tu correo electrónico</li>
+                        <li>Completar tu perfil con información adicional</li>
+                        <li>Explorar nuestros recursos y comunidad</li>
+                    </ul>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="registro.html" class="secondary-button">
+                        <i class="fas fa-arrow-left"></i>
+                        <span>Volver al registro</span>
+                    </a>
+                    <a href="#" class="primary-button">
+                        <span>Continuar al área de usuario</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener parámetros de la URL
+            const params = new URLSearchParams(window.location.search);
+            
+            // Mostrar información de usuario
+            const nombre = params.get('nombre');
+            const email = params.get('email');
+            const fechaNacimiento = params.get('fechaNacimiento');
+            
+            document.getElementById('userName').textContent = nombre;
+            document.getElementById('displayNombre').textContent = nombre;
+            document.getElementById('displayEmail').textContent = email;
+            
+            if (fechaNacimiento) {
+                const fecha = new Date(fechaNacimiento);
+                const opciones = { day: '2-digit', month: '2-digit', year: 'numeric' };
+                document.getElementById('displayFechaNacimiento').textContent = fecha.toLocaleDateString('es-ES', opciones);
+            }
+        });
+    </script>
+</body>
+</html>

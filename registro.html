@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea tu cuenta</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="form-container">
+            <div class="form-side">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <span>Dig Marketing</span>
+                </div>
+                
+                <h1>Únete a nosotros</h1>
+                <p class="intro-text">Crea tu propia cuenta para poder disfrutar de nuestro contenido</p>
+                
+                <form id="registroForm" action="confirmacion.html" method="GET">
+                    <div class="input-group">
+                        <label for="nombre">Nombre completo <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                        </div>
+                        <div class="error-message" data-error="nombre">Este campo es obligatorio</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="email">Correo electrónico <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="tu@correo.com" required>
+                        </div>
+                        <div class="error-message" data-error="email">Ingrese un formato de correo válido</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="password">Contraseña <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required>
+                        </div>
+                        <div class="error-message" data-error="password">La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula y un número</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="confirmPassword">Confirmar contraseña <span class="required">*</span></label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Repite tu contraseña" required>
+                        </div>
+                        <div class="error-message" data-error="confirmPassword">Las contraseñas no coinciden</div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="fechaNacimiento">Fecha de nacimiento</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-calendar"></i>
+                            <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+                        </div>
+                    </div>
+
+                    <div class="checkbox-wrapper">
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="terminos" name="terminos" required>
+                            <label for="terminos">Acepto los <a href="#">términos y condiciones</a> <span class="required">*</span></label>
+                        </div>
+                        <div class="error-message" data-error="terminos">Acepta los términos y condiciones</div>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="primary-button">
+                        <span>Crear mi cuenta</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    
+                    <p class="login-link">¿Ya tienes una cuenta? <a href="#">Iniciar sesión</a></p>
+                </form>
+            </div>
+            
+            <div class="image-side">
+                <div class="overlay">
+                    <div class="quote">
+                        <i class="fas fa-quote-left"></i>
+                        <p>"Desde que creé mi cuenta he subido mi rato de conversion de ventas gracias a todo su contenido"</p>
+                        <div class="author">
+                            <div class="author-img"></div>
+                            <div class="author-info">
+                                <h4>Pablo Lopez Plaza</h4>
+                                <p>Creador del proyecto Dig Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
